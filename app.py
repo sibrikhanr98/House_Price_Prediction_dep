@@ -7,6 +7,7 @@ app = Flask(__name__)
 # Configure logging
 logging.basicConfig(level=logging.INFO)  # Set the logging level to INFO
 
+
 @app.route('/get_location_names', methods=['GET'])
 def get_location_names():
     try:

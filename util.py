@@ -30,13 +30,13 @@ def load_saved_artifacts():
     global __data_columns
     global __locations
 
-    with open("E:/MY FOLDER IMPORTANT/COURSES/Data Science/PROJECTS/ML_Project/03.Real_Estate_Price_Prediction/app/artifacts/columns.json",'r') as f:
+    with open("columns.json",'r') as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[3:]  # first 3 columns are sqft, bath, bhk
 
     global __model
     
-    with open("E:/MY FOLDER IMPORTANT/COURSES/Data Science/PROJECTS/ML_Project/03.Real_Estate_Price_Prediction/app/artifacts/regmodel.pickle",'rb') as f:
+    with open("regmodel.pickle",'rb') as f:
         __model = pickle.load(f)
     print("loading saved artifacts...done")
 
