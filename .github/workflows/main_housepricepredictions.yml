@@ -1,3 +1,7 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
+
 name: Build and deploy Python app to Azure Web App - housepricepredictions
 
 on:
@@ -13,11 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python version and Node.js
+      - name: Set up Python version
         uses: actions/setup-python@v1
         with:
           python-version: '3.11'
-          node-version: '20' # Specify Node.js version here
 
       - name: Create and start virtual environment
         run: |
@@ -62,9 +65,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A9A847A1C2C0470A9484A826C7682D32 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6737BB9331C64FDF8FE4781D9279A2BA }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6DCBEFBD33524B6886BEAF698ED293A6 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_ABC4D447068E4A5C8403242CC6455FD4 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_8EDD6E3BCBCD4544960ADE1C01D5481F }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EE0FFBA341244AF8B16ABE160EA37BB9 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -72,3 +75,4 @@ jobs:
         with:
           app-name: 'housepricepredictions'
           slot-name: 'Production'
+          
